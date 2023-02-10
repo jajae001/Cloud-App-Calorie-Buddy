@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>The List2  webpage!</title>
+  </head>
+    <h1> Welcome to List 2 Page </h1>
+          <body>
+            <h3>You can see names and prices of the books under £20!!:</h3>
+            <ul>
+              <% availablebooks.forEach(function(book){ %>
+              <li><%= book.name %>, £<%= book.price %></li>
+             <% }) %>
+            </ul>
+  </body>
+<a href='./'>Home</a>
+</html>

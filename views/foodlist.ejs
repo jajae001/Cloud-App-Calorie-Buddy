@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Food List</title>
+        <style type = "text/css">  /*html styling css*/
+            table, th, td {
+                border: 2px solid #ccb6b4;
+                padding:15px;
+                text-align: center;
+                text-decoration: none;
+                font-family:Arial;
+		 list-style-type: none;
+            }
+            p{
+                font-family:monospace;
+                background-color:#ccb6b4;    /*css styling paragraph*/
+                padding: 200px;
+                font-size: 30px;
+
+            }
+    ul{
+      margin:5;
+      padding:5;
+      overflow:none;
+      list-style-type:none;
+     }
+        a:link, a:visited{
+            display:flow-root;
+            font-family: Arial;         /*css styling list*/
+            font-weight:100;
+            color:black;
+            background-color:#ffffff;
+            width:140px;
+            text-align: center;
+            text-transform:uppercase;
+            text-decoration:none;
+              }
+        a:hover, a:active{
+            background-color:#ffe4e1        /*css styling list floating colour*/
+        }
+          li{
+              float:left;
+	       list-style-type: none;
+            }
+        </style>
+
+    </head>
+    <body style="background-color:#fffbfa">
+        <ul>
+            <li><a href='/'>Home</a></li>
+	    <li><a href='/login'>Login</a></li>
+            <li><a href='/register'>Register</a> </li>
+            <li><a href='/about'>About page</a></li>        <!-- nav bar links-->
+            <li> <a href='/foodlist'>Food List</a></li>
+            <li><a href='/addfood'>Add Food</a></li>
+            <li><a href='/search'>Search</a></li>
+            <li><a href='/updatedelete'>Update/Delete Food</a></li>            
+            <li><a href='/deleteuser'>Delete User</a></li>
+            <li><a href='/api'> Our API</a></li>
+            <li><a href='/logout'>Logout</a></li>
+
+        </ul><br>
+        <h1 align ="center">
+        <font face ="Arial"; color="#7f7270"; size="10" >SEE YOUR FOODS</font><br></h1> <!-- main header-->
+            
+  <p>You can see names and nutrition of all food Stored in our database here</p><br><br><br>
+        
+        <<ul>
+            <table>  <!-- created a table -->
+            <tr>
+                <th>Author</th>			<!--these value are the heading of the table-->
+                <th>Name</th>
+                <th>Typical values per</th>
+                <th>Unit of the typical value</th>
+                <th>Calories</th>
+                <th>Carbs</th>
+                <th>Fat</th>
+                <th>Protein</th>
+                <th>Salt</th>
+                <th>Sugar</th>
+            </tr>
+              <% food.forEach(function(food){ %>
+                <tr>    
+                     <li>
+                    <td><%= food.username %></td>
+                    <td><%= food.name %></td>
+                    <td><%= food.typical_values_per %></td>
+                    <td><%= food.unit_of_the_typical_value %></td>  <!-- these values are generated result-->
+                    <td><%= food.calories %></td>
+                    <td><%= food.carbs %></td>
+                    <td><%= food.fat %></td>
+                    <td><%= food.protein %></td>
+                    <td><%= food.salt %></td>
+                    <td><%= food.sugar %></td>
+                        
+                    
+                    </li><% }) %>
+                   </tr> 
+            </table>                         
+             </ul>
+
+    </body>
+</html>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+

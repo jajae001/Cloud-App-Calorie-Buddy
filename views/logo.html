@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Update/Delete</title>    
+        <style type = "text/css">  /*html styling css*/
+           
+         .button {
+                text-align: right;
+                padding:10px;
+                width:px;
+                margin-top: 0px;
+                display: block;
+                
+            }
+            input[type=submit] {
+              
+              padding:30px;
+              border:none;
+              border-radius:15px;
+              width:200px;
+              background-color:#7f7270;
+              color:#fffbfa;
+              font-size:20px;
+              margin-left: 300px;
+             
+              
+                
+            }
+            input{
+               width:400px;
+               padding:20px;
+               margin: 2px;
+               border-radius:10px;
+               box-sizing:border-box;
+               border-color: #7f7270;
+                margin-right: 100px;
+              
+            }
+             
+            .entry{
+                
+                font-family:monospace;
+                padding: 10px;
+                font-size: 20px;        /*css styling form area*/
+                text-align: center;
+                
+               
+               
+                
+               
+                    
+                
+            }
+            .entry p{
+               display:inline-block;
+                width: 10%;
+                padding: 5px;
+                
+            }
+            .begP{
+                font-family:monospace;
+                background-color:#ccb6b4;    /*css styling begining paragraph*/
+                font-size: 30px;
+                text-align: center;
+                
+               
+                
+            }        
+    ul{      
+      margin:5;
+      padding:5;
+      overflow:auto;
+      list-style-type:none;
+     }
+        a:link, a:visited{
+            display:flow-root;
+            font-family: Arial;         /*css styling list*/
+            font-weight:100;
+            color:black;
+            background-color:#ffffff;
+            width:140px;
+            text-align: center;
+            padding:10px;
+            text-transform:uppercase;
+            text-decoration:none;
+        }
+        a:hover, a:active{
+            background-color:#ffe4e1        /*css styling list floating colour*/
+        }
+          li{
+              float:left;
+            }
+        </style>         
+    </head>             
+    <body style="background-color:#fffbfa">          
+        <ul>
+            <li><a href='/login'>Login</a></li>
+            <li><a href='/register'>Register</a> </li>
+            <li><a href='/about'>About page</a></li>        <!-- nav bar links-->
+            <li> <a href='/foodlist'>Food List</a></li>
+            <li><a href='/addfood'>Add Food</a></li>            
+            <li><a href='/listusers'>List Users</a></li>
+            <li><a href='/search'>Search</a></li>
+            <li><a href='/deleteuser'>Delete Account</a></li>
+            <li><a href='/updatedelete'>Update/Delete Food</a></li>
+            <li><a href='/api'> Our API</a></li>
+            <li><a href='/logout'>Logout</a></li>
+               
+        </ul><br>
+        <h1 align ="center">
+        <font face ="Arial" color="#7f7270" size="10" >UPDATE/DELETE FROM OUR DATABASE</font><br></h1> <!-- main header-->
+        <div class="begP">
+            <p>Please enter the food name you wish to delete below....</p>
+        </div>
+        <div class="entry">
+            <form method="POST" action="/fdeleted">
+                <p>Food Name: <input id="name" type="text" name="name" required="required" /></p><br>
+                <input type="submit" value="Delete Food"  onclick="return confirm('Are You Sure You Want To Delete This Item?')" />
+            </form>
+        </div>
+        <div class="begP">
+            <p>Please enter the food name and details you wish to update below....</p>
+        </div>        
+        <div class="entry">       
+        <form method="POST" action="/fupdated">
+       <p>Food Name: <input id="name" type="text" name="name" required="required" /></p><br>
+        <p>Typical values per: <input id="typical_values_per" type="number" name="typical_values_per" for="unit_of_the_typical_value">Choose a unit:
+                    <select id="unit_of_the_typical_value" name="unit_of_the_typical_value">
+                      <option value="gram">gram</option>
+                      <option value="liter">liter</option>
+                      <option value="tablespoon">tablespoon</option>
+                      <option value="teaspoon">teaspoon</option>
+                    </select></p><br>
+        <p>Calories: <input id="calories" type="number" name="calories" value="calories"></p><br>
+        <p>Carbs: <input id="carbs" type="number" name="carbs" value="carbs"></p><br>
+        <p>Fat: <input id="fat" type="number" name="fat" value="fat"></p><br>
+        <p>Protien: <input id="protein" type="number" name="protein" value="protein"></p><br>
+        <p>Salt: <input id="salt" type="number" name="salt" value="salt"></p><br>
+        <p>Sugar: <input id="sugar" type="number" name="sugar" value="sugar"></p><br>
+       <input type="submit" value="Update" />
+    
+    </form>
+        </div>  
+    </body>
+</html>
